@@ -1,0 +1,33 @@
+
+## alia rm to trash
+alias rm="trash"
+
+## set proxy
+alias set-proxy="export http_proxy=http://127.0.0.1:1087;export https_proxy=http://127.0.0.1:1087"
+
+## unset proxy
+alias unset-proxy="unset http_proxy;unset https_proxy"
+
+## start "Docker For Desktop"
+alias open-docker="open -a docker"
+
+## quit "Docker For Desktop"
+alias quit-docker="osascript -e 'quit app \"Docker\"'"
+
+
+## start mysql
+alias start-mysql="mysql.server start"
+
+## stop mysql
+alias stop-mysql="mysql.server stop"
+
+## start rabbitmq
+alias start-rabbitmq="rabbitmq-server -detached"
+
+## stop rabbitmq
+alias stop-rabbbitmq="rabbitmqctl stop"
+
+
+## clean java based projects managed by maven or gradle
+
+alias clean-jp="find . -type f  -name '.project'  -or -type f -name '.classpath' -or -type d -name 'bin' -or -type d -name '.settings'  -or -type d -name 'build' -or -type d -name 'targets' -or -type d -name 'out'| xargs trash"
