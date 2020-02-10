@@ -1,0 +1,13 @@
+#! /usr/bin/env bash
+
+TOOLS_HOME="$HOME/.tools"
+
+FLUTTER_HOME="$TOOLS_HOME/flutter"
+
+FLUTTER_BIN_HOME="$FLUTTER_HOME/bin"
+
+EXEC_FILE="$FLUTTER_BIN_HOME/flutter"
+
+$EXEC_FILE $@
+
+
