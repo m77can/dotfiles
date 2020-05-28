@@ -27,7 +27,15 @@ alias start-rabbitmq="rabbitmq-server -detached"
 ## stop rabbitmq
 alias stop-rabbbitmq="rabbitmqctl stop"
 
+## start redis
+alias start-redis="redis-server /usr/local/etc/redis.conf"
+
+## stop redis
+
 
 ## clean java based projects managed by maven or gradle
 
 alias clean-jp="find . -type f  -name '.project'  -or -type f -name '.classpath' -or -type d -name 'bin' -or -type d -name '.settings'  -or -type d -name 'build' -or -type d -name 'targets' -or -type d -name 'out'| xargs trash"
+
+## current ip
+alias cip="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'"
