@@ -9,10 +9,10 @@ alias set-proxy="export http_proxy=http://127.0.0.1:1087;export https_proxy=http
 alias unset-proxy="unset http_proxy;unset https_proxy"
 
 ## start "Docker For Desktop"
-alias open-docker="open -a docker"
+alias start-docker="open -a docker"
 
 ## quit "Docker For Desktop"
-alias quit-docker="osascript -e 'quit app \"Docker\"'"
+alias stop-docker="osascript -e 'quit app \"Docker\"'"
 
 
 ## start mysql
@@ -28,7 +28,7 @@ alias start-rabbitmq="rabbitmq-server -detached"
 alias stop-rabbbitmq="rabbitmqctl stop"
 
 ## start redis
-alias start-redis="redis-server /usr/local/etc/redis.conf"
+alias start-redis="redis-server /usr/local/etc/redis.conf --daemonize yes"
 
 ## stop redis
 
