@@ -43,3 +43,6 @@ alias cip="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([
 ## kubectl
 
 alias k="kubectl"
+
+alias kx="kubectx"
+alias kn="kubens"
