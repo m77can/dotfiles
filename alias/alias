@@ -3,7 +3,10 @@
 alias rm="trash"
 
 ## set proxy
-alias set-proxy="export http_proxy=http://127.0.0.1:1087;export https_proxy=http://127.0.0.1:1087"
+# v2ray
+## alias set-proxy="export http_proxy=http://127.0.0.1:1087;export https_proxy=http://127.0.0.1:1087"
+# clash
+alias set-proxy="export http_proxy=http://127.0.0.1:7890;export https_proxy=http://127.0.0.1:7890"
 
 ## unset proxy
 alias unset-proxy="unset http_proxy;unset https_proxy"
@@ -46,3 +49,10 @@ alias k="kubectl"
 
 alias kx="kubectx"
 alias kn="kubens"
+
+function klogs(){
+  kubectl get pods | grep $1 | awk '{print $1}' | xargs -I {} kubectl logs -f {}
+}
+
+
+
