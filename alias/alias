@@ -50,6 +50,8 @@ alias k="kubectl"
 alias kx="kubectx"
 alias kn="kubens"
 
+alias gcz="git cz"
+
 function klogs(){
   kubectl get pods | grep $1 | awk '{print $1}' | xargs -I {} kubectl logs -f {}
 }
