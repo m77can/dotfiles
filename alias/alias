@@ -1,4 +1,3 @@
-
 ## alia rm to trash
 alias rm="trash"
 
@@ -12,11 +11,10 @@ alias set-proxy="export http_proxy=http://127.0.0.1:7890;export https_proxy=http
 alias unset-proxy="unset http_proxy;unset https_proxy"
 
 ## start "Docker For Desktop"
-alias start-docker="open -a docker"
+alias start-docker="colima start"
 
 ## quit "Docker For Desktop"
-alias stop-docker="osascript -e 'quit app \"Docker\"'"
-
+alias stop-docker="colima stop"
 
 ## start mysql
 alias start-mysql="mysql.server start"
@@ -35,7 +33,6 @@ alias start-redis="redis-server /usr/local/etc/redis.conf --daemonize yes"
 
 ## stop redis
 
-
 ## clean java based projects managed by maven or gradle
 
 alias clean-jp="find . -type f  -name '.project'  -or -type f -name '.classpath' -or -type d -name 'bin' -or -type d -name '.settings'  -or -type d -name 'build' -or -type d -name 'targets' -or -type d -name 'out'| xargs trash"
@@ -45,15 +42,17 @@ alias cip="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([
 
 ## kubectl
 
-alias k="kubectl"
-
-alias kx="kubectx"
-alias kn="kubens"
-
 alias gcz="git cz"
 
-function klogs(){
-  kubectl get svc | grep $1 | awk '{print $1}' | xargs -I {} kubectl logs -f svc/{}
-}
+if [ -f ~/.kube/config ]; then
+  alias k="kubectl"
+  alias klogs="kubectl logs -f"
+  alias kx="kubectx"
+  alias kn="kubens"
+fi
 
 
+
+
+
+alias klogf="k logs -f deployment/flux -n flux --since=10m"
