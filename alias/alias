@@ -52,7 +52,18 @@ if [ -f ~/.kube/config ]; then
 fi
 
 
+alias fx2l="k logs -f deployments.apps/kustomize-controller -n flux-system --since=60m"
+alias fx1l="k logs -f deployment/flux -n flux --since=60m" 
+# run_jrbel_server() {
+#   APP_NAME='jrebel-license-active-server'
+#   APP_COUNT=$(ps -ef | grep jrebel-license-active-server | grep -v "grep" | wc -l)
+#   # echo $APP_COUNT
+#   if [ $APP_COUNT -eq 0 ]; then
+#     echo "$APP_NAME IS NOT RUNNING, LAUNCH ...." >>/dev/null 2>&1
+#     nohup ~/.tools/$APP_NAME & >>/dev/null 2>&1
+#   else
+#     echo "$APP_NAME IS RUNNING, DO NOTING. " >>/dev/null 2>&1
+#   fi
+# }
 
-
-
-alias klogf="k logs -f deployment/flux -n flux --since=10m"
+# run_jrbel_server
