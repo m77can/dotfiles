@@ -11,7 +11,7 @@ alias set-proxy="export http_proxy=http://127.0.0.1:7890;export https_proxy=http
 alias unset-proxy="unset http_proxy;unset https_proxy"
 
 ## start "Docker For Desktop"
-alias start-docker="colima start"
+alias start-docker="colima start && sudo ln -sf ~/.colima/default/docker.sock /var/run/docker.sock"
 
 ## quit "Docker For Desktop"
 alias stop-docker="colima stop"
@@ -67,3 +67,14 @@ alias fx1l="k logs -f deployment/flux -n flux --since=60m"
 # }
 
 # run_jrbel_server
+
+# git
+
+alias gst="git status"
+
+alias rime-reload='
+if [ -f "/Library/Input Methods/Squirrel.app/Contents/MacOS/Squirrel" ]; then
+    /Library/Input\ Methods/Squirrel.app/Contents/MacOS/Squirrel --reload
+else
+    echo "Rime输入法未安装"
+fi'
